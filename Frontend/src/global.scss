@@ -1,0 +1,62 @@
+@mixin font($font-family, $font-file) {
+
+  // "Função" para importar fontes
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font('Roboto', './static/fonts/Roboto'); // Importando fontes utilizando a "Função" acima
+@include font('Cabin', './static/fonts/Cabin'); // Importando fontes utilizando a "Função" acima
+@include font('Leckerli', './static/fonts/Leckerli'); // Importando fontes utilizando a "Função" acima
+
+
+@mixin Center($direction:null, $justify:null) {
+  // "Função" para centralizar elementos
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @if $justify==space {
+    justify-content: space-between;
+  }
+
+  @else if $justify==start {
+    justify-content: flex-start;
+  }
+
+  @if $direction==row {
+    flex-direction: row;
+  }
+
+}
+
+* {
+  // Reset Css
+  font-family: 'Roboto';
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+html,
+body {
+  font-size: 62.5%; // Fazendo com que cada 1rem equivala a 12pt
+}

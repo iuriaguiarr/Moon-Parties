@@ -1,0 +1,194 @@
+@import "../../global.scss";
+
+#title {
+    font-size: 6rem;
+    font-weight: lighter;
+    font-family: 'Leckerli';
+    justify-self: center;
+    align-self: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.cardsGroup {
+    z-index: 100;
+    margin-top: 20px;
+
+}
+
+.cards {
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.card {
+    @include Center();
+    background-color: transparentize(#fff, $amount: 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.contentCard {
+    margin: 20px;
+}
+
+.titleCard {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.textCard {
+    font-size: 1.5rem;
+    padding: 0 3px;
+    line-height: 2.5rem;
+    margin-bottom: 2 0px;
+    text-align: center;
+}
+
+.modal {
+    @include Center();
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    pointer-events: none;
+
+    &:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modalContainer {
+        @include Center();
+        border-radius: 8px;
+        position: relative;
+        padding: 20px 20px 20px 20px;
+        background: #fff;
+        font-size: 2rem;
+
+
+        @media (max-width:768px) {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .modalContent {
+            @include Center();
+
+            h5 {
+                line-height: 3rem;
+            }
+
+            .ZeA {
+                @include Center();
+                margin-top: 20px;
+
+                .buttonModal {
+                    background-color: #1bcf51;
+                    border: none;
+                    height: 30px;
+                    border-radius: 4px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    width: 250px;
+                    margin-bottom: 20px;
+
+                    transition: all ease-in-out 0.3s;
+
+                    &:hover {
+                        background-color: darken(#1bcf51, $amount: 10);
+                    }
+
+                    &:active {
+                        background-color: darken(#1bcf51, $amount: 20);
+                    }
+                }
+            }
+
+            .malu {
+                @include Center();
+                margin-top: 10px;
+
+                width: 300px;
+                padding: 10px;
+
+                p {
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            .space {
+                @include Center(column, space);
+                width: 50%;
+                margin-bottom: 30px;
+            }
+
+            #closeButton {
+                align-self: flex-start;
+                background-color: transparent;
+                transition: all ease-in-out 0.3s;
+                padding: 5px 8px 5px 8px;
+                border-radius: 100px;
+
+                &:hover {
+                    background-color: transparentize(#000000, $amount: 0.85);
+                }
+
+                &:active {
+                    background-color: transparentize(#000000, $amount: 0.5);
+                }
+            }
+        }
+    }
+}
+
+.formControl {
+    @include Center();
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .inputIcon {
+        margin-right: 5px;
+        transition: ease 0.3s;
+    }
+
+    .input {
+        @include Center(row);
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        border: none;
+        width: 80%;
+        padding: 10px 10px 10px 10px;
+        transition: all ease 0.3s;
+        border-bottom: 2px solid #ccc;
+
+        &:hover {
+            border-bottom: 2px solid #000;
+        }
+
+        &:focus {
+            border-bottom: 2px solid #000;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+@import "../../global.scss";
+
+// Card //
+.contentLogin {
+    @include Center();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .cardLogin {
+        @include Center();
+        min-width: 400px;
+        background-color: #fff;
+        border-radius: 8px;
+        transition: all 0.3s ease 0s;
+
+        #titleLogin {
+            font-size: 3rem;
+            color: #000;
+        }
+
+        #reset {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: #444;
+        }
+
+        .contentCardLogin {
+            @include Center();
+            min-width: 400px;
+            padding: 20px;
+        }
+    }
+}
+
+// Card //
+
+// Forms //
+.formControlLogin {
+    @include Center();
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .inputIcon {
+        margin-right: 5px;
+    }
+
+    .input {
+        @include Center(row);
+        width: 250px;
+        margin: 10px;
+    }
+
+    input {
+        background: transparent;
+        width: 80%;
+        padding: 10px;
+        transition: all ease 0.3s;
+        border-bottom: 2px solid #888;
+
+        &:hover,
+        &:focus {
+            border-bottom: 2px solid #000;
+        }
+    }
+}
+
+// Forms //
+
+// Modal //
+.modalLogin {
+    @include Center(row);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+
+    &:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modalContainerLogin {
+        @include Center();
+        border-radius: 8px;
+        position: relative;
+        background: #fff;
+        font-size: 2rem;
+
+        .modalContentLogin {
+            @include Center();
+            padding: 20px;
+
+            .centerLogin {
+                @include Center();
+
+                h5 {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Modal //
+
+// Confirm button //
+.buttonModalLogin {
+    background-color: #1bcf51;
+    height: 30px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #fff;
+    width: 250px;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+        background-color: darken(#1bcf51, $amount: 5);
+    }
+
+    &:active {
+        background-color: darken(#1bcf51, $amount: 15);
+    }
+}
+
+// Confirm button //
+
+// Back Button //
+#closeButton {
+    align-self: flex-start;
+    background-color: transparent;
+    transition: all ease-in-out 0.3s;
+    padding: 5px 8px 5px 8px;
+    border-radius: 100px;
+
+    &:hover {
+        background-color: transparentize(#000000, $amount: 0.85);
+    }
+
+    &:active {
+        background-color: transparentize(#000000, $amount: 0.5);
+    }
+}
+
+// Back Button //
+
+// Responsive //
+@media (max-width:768px) {
+
+    .content {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .cardLogin {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+
+    .modalContainerLogin {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+// Responsive //
